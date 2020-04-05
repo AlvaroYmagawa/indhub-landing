@@ -7,15 +7,16 @@ import colors from './colors';
 import fonts from './fonts';
 
 export default createGlobalStyle`
-  @import url('https://fonts.googleapis.com/css?family=Roboto:100,400,700&display=swap');
-
   /* RESET ALL DEFAULT CSS STYLE */
   *{
+    font-family: 'Helvetica Neue';
     margin: 0;
     padding: 0;
     outline: 0;
     box-sizing: border-box;
   }
+
+  html { font-size: 10px; }
 
   *:focus {
     outline: 0;
@@ -23,8 +24,7 @@ export default createGlobalStyle`
 
   html, body, #root {
     height: 100%;
-    background: none;
-    background-size: cover;
+    background: ${colors.primaryDark};
   }
 
   body {
