@@ -1,4 +1,5 @@
 import React from 'react';
+import { MdMenu } from 'react-icons/md';
 import { Container, NavBar, Item, IndHub, Logo } from './styles';
 
 // CUSTOM IMPORTS
@@ -9,8 +10,9 @@ export default function Header() {
   return (
     <>
       <Container>
+        <MdMenu className="menu" color="#fff" size={24} />
         <NavBar>
-          <Item>HOME</Item>
+          <Item checked>HOME</Item>
           <Item>SOBRE</Item>
           <Item>CONTATO</Item>
         </NavBar>

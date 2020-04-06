@@ -8,12 +8,31 @@ export const Container = styled.div`
   width: 100%;
   color: #fff;
   padding: 1.6rem 9.6rem;
+
+  @media (max-width: 1070px) {
+    font-size: 4.5rem;
+
+    padding: 1.6rem 5rem;
+  }
+
+  @media (max-width: 700px) {
+    font-size: 4.5rem;
+
+    padding: 1.6rem 2.4rem;
+  }
 `;
 
 export const Main = styled.div`
+  flex: 1;
   display: flex;
   width: 100%;
   align-items: flex-end;
+
+  @media (max-width: 700px) {
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  }
 `;
 
 export const Slogan = styled.p`
@@ -21,22 +40,34 @@ export const Slogan = styled.p`
   flex: 1.5;
   font-weight: bold;
   color: #fff;
+  margin-right: 5%;
   font-size: 5rem;
 
   span {
     color: ${colors.accent};
   }
+
+  @media (max-width: 1070px) {
+    font-size: 4.5rem;
+  }
+
+  @media (max-width: 700px) {
+    flex: 1;
+    align-self: flex-start;
+    font-size: 2.8rem;
+    margin: 3.2rem 0;
+  }
 `;
 
 export const Form = styled.form`
   flex: 1;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
 `;
 
 export const Input = styled.input`
-  max-width: 50rem;
   border-radius: 4px;
   padding: 16px;
   border: none;
@@ -64,12 +95,17 @@ export const Contacts = styled.div`
   display: flex;
   position: absolute;
   bottom: 0%;
-  margin-bottom: 4rem;
+  margin: 4rem 0;
 
   svg {
     & + svg {
       margin-left: 4.8rem;
     }
+  }
+
+  @media (max-width: 700px) {
+    position: unset;
+    margin: 3.2rem 0 0 0;
   }
 `;
 

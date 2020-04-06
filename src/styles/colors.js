@@ -16,6 +16,7 @@ const colors = {
 
   // DEFAULT
   black75: '#000000BF',
+  white75: '#ffffffBF',
 };
 
 export default colors;
