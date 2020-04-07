@@ -2,21 +2,12 @@ import styled from 'styled-components';
 import { colors } from '~/styles';
 
 export const Container = styled.div`
-  position: fixed;
-  top: 0%;
+  position: relative;
   width: 100%;
   display: flex;
-  padding: 1.6rem 9.6rem;
   align-items: center;
+  justify-content: space-between;
   background: ${colors.primaryDark};
-
-  .fragment {
-    flex: 1;
-
-    & + .fragment {
-      text-align: right;
-    }
-  }
 
   .menu {
     display: none;
@@ -24,22 +15,8 @@ export const Container = styled.div`
 
   @media (max-width: 1070px) {
     font-size: 4.5rem;
-
-    padding: 1.6rem 5rem;
   }
-
-  @media (max-width: 700px) {
-    padding: 1.6rem 2.4rem;
-
-    .fragment {
-      flex: 1;
-      display: flex;
-
-      & + .fragment {
-        display: none;
-      }
-    }
-
+  @media (max-width: 880px) {
     .menu {
       cursor: pointer;
       position: absolute;
@@ -48,13 +25,23 @@ export const Container = styled.div`
   }
 `;
 
+export const Line = styled.div`
+  position: absolute;
+  bottom: 0%;
+  background: #ffffff15;
+  opacity: 0.8;
+  width: 100%;
+  height: 1px;
+`;
+
 export const NavBar = styled.ul`
-  flex: 1;
-  margin-top: 12px;
   align-items: center;
   display: flex;
+  max-width: 300px;
+  width: 50%;
+  justify-content: space-between;
 
-  @media (max-width: 700px) {
+  @media (max-width: 880px) {
     display: none;
   }
 `;
@@ -63,12 +50,8 @@ export const Item = styled.li`
   cursor: pointer;
   position: relative;
   color: ${props => (props.checked ? '#fff' : colors.white75)}};
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   font-weight: 400;
-
-  & + li {
-    margin-left: 10%;
-  }
 
   &::after {
     content: '';
@@ -98,21 +81,11 @@ export const IndHub = styled.img`
   width: 14rem;
   height: 4.5rem;
   max-width: 14rem;
-  margin: 0 auto;
 
-  @media (max-width: 700px) {
+  @media (max-width: 880px) {
+    margin: 0 auto;
     width: 10.2rem;
     height: 3.2rem;
     max-width: 10.2rem;
-  }
-`;
-
-export const Logo = styled.img`
-  width: 4.5rem;
-  height: 4.5rem;
-  max-width: 4.5rem;
-
-  @media (max-width: 700px) {
-    display: none;
   }
 `;

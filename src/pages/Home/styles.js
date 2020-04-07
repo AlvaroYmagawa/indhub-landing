@@ -1,24 +1,41 @@
 import styled from 'styled-components';
+import Header from '~/components/Header';
 import { colors } from '~/styles';
 
 export const Container = styled.div`
+  margin: 0 auto;
+  max-width: 1280px;
+  max-height: 720px;
+  min-height: 720px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  background: ${colors.primaryDark};
+  box-shadow: 5px 5px 15px #00000050;
+  padding: 0 5%;
+`;
+
+export const NavHeader = styled(Header)`
+  flex: 1;
+`;
+
+export const Content = styled.div`
+  flex: 5;
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
   color: #fff;
-  padding: 1.6rem 9.6rem;
+  background: ${colors.primaryDark};
 
   @media (max-width: 1070px) {
     font-size: 4.5rem;
-
-    padding: 1.6rem 5rem;
   }
 
-  @media (max-width: 700px) {
+  @media (max-width: 880px) {
     font-size: 4.5rem;
-
-    padding: 1.6rem 2.4rem;
   }
 `;
 
@@ -26,9 +43,9 @@ export const Main = styled.div`
   flex: 1;
   display: flex;
   width: 100%;
-  align-items: flex-end;
+  align-items: center;
 
-  @media (max-width: 700px) {
+  @media (max-width: 880px) {
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
@@ -40,7 +57,6 @@ export const Slogan = styled.p`
   flex: 1.5;
   font-weight: bold;
   color: #fff;
-  margin-right: 5%;
   font-size: 5rem;
 
   span {
@@ -51,11 +67,11 @@ export const Slogan = styled.p`
     font-size: 4.5rem;
   }
 
-  @media (max-width: 700px) {
-    flex: 1;
-    align-self: flex-start;
-    font-size: 2.8rem;
-    margin: 3.2rem 0;
+  @media (max-width: 880px) {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    font-size: 3rem;
   }
 `;
 
@@ -71,11 +87,13 @@ export const Input = styled.input`
   border-radius: 4px;
   padding: 16px;
   border: none;
-  background: #fff;
+  background: #ffffff10;
+  color: #fff;
+  font-size: 16px;
   margin-bottom: 8px;
 
   ::placeholder {
-    color: ${colors.black75};
+    color: #ffffff80;
     font-weight: 300;
   }
 `;
@@ -92,26 +110,32 @@ export const Small = styled.small`
 `;
 
 export const Contacts = styled.div`
+  flex: 1;
   display: flex;
-  position: absolute;
-  bottom: 0%;
-  margin: 4rem 0;
+  justify-content: center;
+  align-items: center;
 
   svg {
+    cursor: pointer;
+    color: #ffffff80;
+
+    &:hover {
+      color: #fff;
+    }
+
     & + svg {
       margin-left: 4.8rem;
     }
   }
 
-  @media (max-width: 700px) {
+  @media (max-width: 880px) {
     position: unset;
-    margin: 3.2rem 0 0 0;
   }
 `;
 
 export const Background = styled.img`
-  position: fixed;
+  position: absolute;
   max-width: initial;
-  right: 0%;
   bottom: 0%;
+  right: 0%;
 `;
