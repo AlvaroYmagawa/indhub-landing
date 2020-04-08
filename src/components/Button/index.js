@@ -1,16 +1,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { Container } from './styles';
+import { Container, Loader } from './styles';
 
-export default function Button({ className, children, onClick }) {
+export default function Button({
+  className,
+  children,
+  onClick,
+  type,
+  loading,
+  disabled,
+}) {
   return (
     <Container
-      type="button"
+      disabled={disabled}
+      type={type}
       className={className && className}
       onClick={onClick && onClick}
     >
-      {children}
+      {loading ? <Loader>...</Loader> : children}
     </Container>
   );
 }
@@ -19,9 +27,13 @@ Button.propTypes = {
   className: PropTypes.string,
   children: PropTypes.string.isRequired,
   onClick: PropTypes.func,
+  type: PropTypes.string.isRequired,
+  loading: PropTypes.bool.isRequired,
+  disabled: PropTypes.bool,
 };
 
 Button.defaultProps = {
   className: null,
   onClick: null,
+  disabled: false,
 };

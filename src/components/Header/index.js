@@ -1,11 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { MdMenu } from 'react-icons/md';
-import { Container, NavBar, Item, IndHub, Logo, Line } from './styles';
+import { Container, NavBar, Item, IndHub, Line } from './styles';
 
 // CUSTOM IMPORTS
 import indHub from '~/assets/indHub.png';
-import logo from '~/assets/logo.png';
 
 export default function Header({ className }) {
   return (

@@ -1,12 +1,13 @@
 import styled from 'styled-components';
+import InputMask from 'react-input-mask';
 import Header from '~/components/Header';
 import { colors } from '~/styles';
 
 export const Container = styled.div`
   margin: 0 auto;
   max-width: 1280px;
-  max-height: 720px;
-  min-height: 720px;
+  max-height: 1000px;
+  min-height: 700px;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -83,11 +84,26 @@ export const Form = styled.form`
   justify-content: center;
 `;
 
+export const InputTel = styled(InputMask)`
+  border-radius: 4px;
+  padding: 16px;
+  border: none;
+  background: ${colors.primary};
+  color: #fff;
+  font-size: 16px;
+  margin-bottom: 8px;
+
+  ::placeholder {
+    color: #ffffff80;
+    font-weight: 300;
+  }
+`;
+
 export const Input = styled.input`
   border-radius: 4px;
   padding: 16px;
   border: none;
-  background: #ffffff10;
+  background: ${colors.primary};
   color: #fff;
   font-size: 16px;
   margin-bottom: 8px;
